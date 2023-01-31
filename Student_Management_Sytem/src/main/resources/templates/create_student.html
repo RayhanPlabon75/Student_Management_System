@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Student management system</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<h1 class="text-center">Create Student</h1>
+			<div
+				class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<div class="card-body">
+					<form th:action="@{/students}" th:object="${student}" method="POST">
+						<div class="form-group">
+							<label>First Name</label> <input type="text" name="firstname"
+								th:field="*{firstname}" class="form-control"
+								placeholder="Enter Student First Name" />
+						</div>
+						<div class="form-group">
+							<label>Last Name</label> <input type="text" name="lastname"
+								th:field="*{lastname}" class="form-control"
+								placeholder="Enter Student Last Name" />
+						</div>
+						<div class="form-group">
+						<label>Email</label> <input type="email" name="email"
+							th:field="*{email}" class="form-control"
+							placeholder="Enter Student Email" />
+				</div>
+				<div class="box-footer">
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</div>
+
+
+				</form>
+			</div>
+		</div>
+	</div>
+	</div>
+</body>
+</html>
